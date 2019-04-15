@@ -13,10 +13,13 @@
             <a class="nav-link" href="http://localhost/amazingform/forms/add_field.php">Add Field</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="http://localhost/amazingform/fields/list.php">View Fields</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost/amazingform/forms/add_user.php">Add User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/amazingform/users/list-users.php">View Users</a>
+            <a class="nav-link" href="http://localhost/amazingform/users/list.php">View Users</a>
           </li>
         </ul>
       </div>

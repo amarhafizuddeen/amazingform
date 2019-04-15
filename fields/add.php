@@ -8,7 +8,7 @@
     $type = $_POST['type'];
     $required = isset($_POST['required']) ? 1 : 0;
 
-    $sql = "SELECT count(id) AS num FROM fields WHERE model = 'users'";
+    $sql = "SELECT count(id) AS num FROM fields WHERE model='$model'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $sort_order = $row['num'] + 1;

@@ -2,6 +2,8 @@
     require('../database.php');
     session_start();
 
+    $user_id = $_GET['id'];
+
     $sql = "SELECT id, name FROM fields WHERE model = 'users'";
     $result = mysqli_query($conn, $sql);
     $inputs = [];
@@ -15,20 +17,20 @@
         $inputs[] = $input;
     }
     
-    $sql = "INSERT INTO users (fields) VALUES (?)";
+    $sql = "UPDATE users SET fields = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('s', json_encode($inputs));
+    $stmt->bind_param('si', json_encode($inputs), $user_id);
     
     if ($stmt->execute()) {
         $_SESSION['response'] = [
-            'message' => 'Successfully added a new user.'
+            'message' => 'Successfully updated user details.'
         ];
     } else {
         $_SESSION['response'] = [
-            'error' => 'Failed to add new user.'
+            'error' => 'Failed to update user details.'
         ];
     }
     
 
-    header('Location: ../forms/add_user.php');
+    header('Location: ../forms/edit_user.php?id='.$user_id);
     die();

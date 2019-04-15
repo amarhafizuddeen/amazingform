@@ -32,6 +32,18 @@
             'fields' => $arr
         ];
     }
+
+    $sql = "SELECT id, title FROM fields WHERE model = 'users' ORDER BY sort_order ASC LIMIT 3";
+    $result = mysqli_query($conn, $sql);
+
+    $fields = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $fields[] = [
+            'id' => $row['id'],
+            'title' => $row['title']
+        ];
+    } 
 ?>
 
 <?php require('list-users.php'); ?>
