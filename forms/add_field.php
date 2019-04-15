@@ -19,6 +19,14 @@
         <label>Field Type:</label>
         <input type="text" placeholder="integer, text, ..." class="form-control" name="type" required>
     </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="required" id="defaultCheck1" checked>
+            <label class="form-check-label" for="defaultCheck1">
+                Required
+            </label>
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <?php require('../inc/footer.php') ?>

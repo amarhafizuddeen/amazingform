@@ -1,5 +1,5 @@
 <?php 
-$requestUri = 'add_user';
+$requestUri = 'edit_user';
 require('../inc/header.php') 
 ?>
 
@@ -7,6 +7,6 @@ require('../inc/header.php')
 
 <form method="post" action="../users/add.php">
     <?php require('../inc/fields/users.php') ?>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Update</button>
 </form>
 <?php require('../inc/footer.php') ?>

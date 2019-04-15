@@ -15,12 +15,13 @@ function interpolate($data, $template){
 
 $template = file_get_contents(__DIR__. "/templates/input_field.html");
 
-$sql = "SELECT name, title, type FROM fields WHERE model = 'users' ORDER BY sort_order ASC";
+$sql = "SELECT name, title, type, required FROM fields WHERE model = 'users' ORDER BY sort_order ASC";
 $result = mysqli_query($conn, $sql);
 
 $str = '';
 
-while ($data = mysqli_fetch_assoc($result)) {     
+while ($data = mysqli_fetch_assoc($result)) { 
+	$data['required'] = $data['required'] ? 'required' : '';    
     $str .= interpolate($data, $template);
 }
 
